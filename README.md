@@ -26,10 +26,10 @@ This project uses the package.json for depencies:
 
 Read about each dependency here:
 
-[express] (http://expressjs.com)
-[stylus] (http://learnboost.github.com/stylus)
-[jade] (http://jade-lang.com)
-[now] (http://nowjs.com)
+    [express] (http://expressjs.com) - web framework for node.js
+    [jade] (http://jade-lang.com) - html templates
+    [stylus] (http://learnboost.github.com/stylus) - css templates
+    [now] (http://nowjs.com) - allows RMI and real time data push between clients
 
 basic installation
 ==================
