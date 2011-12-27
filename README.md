@@ -50,10 +50,12 @@ run the example
 ---------------
 
 Server:
+
 	cd nowjs-mutiplayer-map
 	node app.js
 
 Client:
+
 	Open browser of choice (Chrome!):
 	http://localhost:3000
 	Move the dot around the map
