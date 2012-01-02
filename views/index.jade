@@ -2,6 +2,15 @@ div#map-container
     h1= title
     canvas#map(width=500, height=400)
 
-div#bot-controlls
+div#chat-controls
+    div#room-list
+      a(href='#', class='change selected') room 1
+      a(href='#', class='change') room 2
+      a(href='#', class='change') room 3
+    div#messages You're in room 1
+    input#chat-input(type='text')
+    input#send-button(type='button', value='Send')
+
+div#bot-controls
     button#startBot Start Bot
     button#stopBot Stop Bot

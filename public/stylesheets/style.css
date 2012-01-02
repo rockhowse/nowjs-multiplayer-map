@@ -5,3 +5,7 @@ body {
 a {
   color: #00b7ff;
 }
+#messages {
+  height: 100px;
+  overflow: auto;
+}

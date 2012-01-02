@@ -11,25 +11,28 @@ $(document).ready(function() {
     console.log("setting up map")
       $(document).keydown( function(e) {
         console.log("key pressed:" + e)
-        e.preventDefault();
         switch(e.which) {
           //left
           case 37:
+              e.preventDefault();
             viewport.x -= 5;
             now.updateActor(viewport.x, viewport.y);
             break;
           //right
           case 39:
+            e.preventDefault();
             viewport.x += 5;
             now.updateActor(viewport.x, viewport.y);
             break;
           //up
           case 38:
+            e.preventDefault();
             viewport.y -= 5;
             now.updateActor(viewport.x, viewport.y);
             break;
           //down
           case 40:
+            e.preventDefault();
             viewport.y += 5;
             now.updateActor(viewport.x, viewport.y);
             break;

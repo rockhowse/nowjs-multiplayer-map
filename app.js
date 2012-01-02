@@ -43,8 +43,14 @@ var actors = [];
 
 // what happens on connect
 nowjs.on('connect', function() {
+    // map setup
     actors[this.user.clientId] = {x: 0, y: 0};
     console.log("user connected: " + this.user.clientId);
+
+    // chat room setup
+    this.now.room = "room 1";
+    nowjs.getGroup(this.now.room).addUser(this.user.clientId);
+    console.log(this.user.clientId + " joined: " + this.now.name);
 });
 
 // what happens on disconnect
@@ -52,6 +58,7 @@ nowjs.on('disconnect', function() {
     for(var i in actors) {
         if(i == this.user.clientId) {
             delete actors[i];
+            console.log(this.user.clientId + " left: " + this.now.name);
             break;
         }
     }
@@ -74,3 +81,16 @@ everyone.now.updateActor = function(x, y) {
         });
     }
 }
+
+// when a user changes group, lets show it
+everyone.now.changeRoom = function(newRoom){
+    nowjs.getGroup(this.now.room).removeUser(this.user.clientId);
+    nowjs.getGroup(newRoom).addUser(this.user.clientId);
+    this.now.room = newRoom;
+    this.now.receiveMessage("SERVER", "You're now in " + this.now.room);
+}
+
+// make sure to send chat where it's needed
+everyone.now.distributeMessage = function(message){
+    nowjs.getGroup(this.now.room).now.receiveMessage(this.now.name, message);
+};
