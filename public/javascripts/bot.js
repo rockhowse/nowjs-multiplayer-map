@@ -1,19 +1,25 @@
 
 // interval used to run bot logic
 var moveInterval;
+// interval used to chat the bot
+var chatInterval;
+
+var chatPhrases = ['Lolz!', 'Can\'t catch me noob', 'I used to be a bot like you until I took an arrow in the knee', 'Meep! Meep!'];
 
 // starts the bot loop
 function turnOnAutoPilot() {
-    moveInterval=setInterval(runbot, 500);
+    moveInterval=setInterval(moveBot, 500);
+    chatInterval=setInterval(chatbot, 5000);
 }
 
 // stops the bot loop
 function turnOffAutoPilot() {
     clearInterval(moveInterval);
+    clearInterval(chatInterval);
 }
 
 // run the bot code
-function runbot() {
+function moveBot() {
     var whichDirection=Math.floor(Math.random()*4);
 
     var e = jQuery.Event("keydown");
@@ -34,6 +40,14 @@ function runbot() {
     }
 
     $(document).trigger(e);
+}
+
+// run the bot's chat function
+function chatbot() {
+    var whichPhrase=Math.floor(Math.random()*chatPhrases.length)-1;
+
+    $('#chat-input').val(chatPhrases[whichPhrase]);
+    $("#send-button").trigger('click');
 }
 
 // configure bot button presses
