@@ -44,7 +44,7 @@ function moveBot() {
 
 // run the bot's chat function
 function chatbot() {
-    var whichPhrase=Math.floor(Math.random()*chatPhrases.length)-1;
+    var whichPhrase=Math.floor(Math.random()*(chatPhrases.length-1);
 
     $('#chat-input').val(chatPhrases[whichPhrase]);
     $("#send-button").trigger('click');
