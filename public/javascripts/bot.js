@@ -4,7 +4,7 @@ var moveInterval;
 // interval used to chat the bot
 var chatInterval;
 
-var chatPhrases = ['Lolz!', 'Can\'t catch me noob', 'I used to be a bot like you until I took an arrow in the knee', 'Meep! Meep!'];
+var chatPhrases = ['Lolz!', 'Can\'t catch me noob', 'I used to be a bot like you until I took an arrow in the knee', 'Meep! Meep!', 'kill all humons!'];
 
 // starts the bot loop
 function turnOnAutoPilot() {
