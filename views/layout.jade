@@ -3,9 +3,17 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    // third party libraries
     script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')
-    script(src='/nowjs/now.js')
+    script(src='/nowjs/now.js') 
+
+    // Three.js - WebGL library for doing 3D graphics
+    script(src='/javascripts/lib/Three.js')
+    script(src='/javascripts/lib/Stats.js')
+
     script(src='/javascripts/map.js')
     script(src='/javascripts/bot.js')
     script(src='/javascripts/chat.js')
+    script(src='/javascripts/viewport.js')
+
   body!= body

@@ -94,3 +94,9 @@ everyone.now.changeRoom = function(newRoom){
 everyone.now.distributeMessage = function(message){
     nowjs.getGroup(this.now.room).now.receiveMessage(this.now.name, message);
 };
+
+// only send the map updates to the people in the room
+everyone.now.distributeVoxelInfo = function(posX, posY, posZ, isCtrlDown){
+    console.log("user: " + this.user.clientId + " added a voxel x: " + posX + " y: " + posY + " z: " + posZ + " ctrlPressed: " + isCtrlDown);
+    nowjs.getGroup(this.now.room).now.receiveVoxelInfo(posX, posY, posZ, isCtrlDown);
+};

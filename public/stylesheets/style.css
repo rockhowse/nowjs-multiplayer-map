@@ -9,3 +9,8 @@ a {
   height: 100px;
   overflow: auto;
 }
+#view-port {
+  background: #fff;
+  width: 400px;
+  height: 300px;
+}
